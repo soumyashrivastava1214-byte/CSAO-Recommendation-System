@@ -24,12 +24,6 @@ CATEGORY_MAP = {
     4: "Meals🍛"
 }
 
-PRICE_MAP = {
-    0: 100,
-    1: 80,
-    2: 120,
-    3: 200
-}
 
 # =============================
 # Load artifacts
@@ -63,12 +57,19 @@ item_category = st.selectbox(
 )
 
 if st.button("Add to Cart"):
+    # Pick a realistic price from dataset for this category
+    price = (
+        df[df["item_category"] == item_category]["item_price"]
+        .sample(1)
+        .values[0]
+    )
+
     st.session_state.cart_items.append({
         "item_category": item_category,
-        "item_price": PRICE_MAP[item_category]
+        "item_price": price
     })
-    st.success(f"{CATEGORY_MAP[item_category]} added to cart")
 
+    st.success("Item added to cart")
 # =============================
 # Display Cart
 # =============================
@@ -146,4 +147,5 @@ if st.session_state.cart_items:
 else:
 
     st.info("Add items to cart to see recommendations.")
+
 
