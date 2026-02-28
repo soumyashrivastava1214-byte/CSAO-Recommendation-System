@@ -19,7 +19,7 @@ st.caption("Session-based, context-aware add-on recommender")
 # =============================
 CATEGORY_MAP = {
     1: "Snacks🥪",
-    2: "Beverages🍸",
+    2: "Beverages🍹",
     3: "Desserts🍨",
     4: "Meals🍛"
 }
@@ -51,7 +51,7 @@ st.success("✅ Model, features, and dataset loaded successfully.")
 # =============================
 # CART UI
 # =============================
-st.subheader("🛍️ Build Your Cart")
+st.subheader("🍱 Build Your Cart")
 
 if "cart_items" not in st.session_state:
     st.session_state.cart_items = []
@@ -146,3 +146,4 @@ if st.session_state.cart_items:
 else:
 
     st.info("Add items to cart to see recommendations.")
+
