@@ -18,10 +18,10 @@ st.caption("Session-based, context-aware add-on recommender")
 # UI-only mappings
 # =============================
 CATEGORY_MAP = {
-    1: "Snacks🥪",
-    2: "Beverages🍹",
-    3: "Desserts🍨",
-    4: "Meals🍛"
+    0: "Snacks🥪",
+    1: "Beverages🍹",
+    2: "Desserts🍨",
+    3: "Meals🍛"
 }
 
 
@@ -147,5 +147,6 @@ if st.session_state.cart_items:
 else:
 
     st.info("Add items to cart to see recommendations.")
+
 
 
